@@ -12,30 +12,7 @@ public class TcpTimeTest {
 
         long startTime=System.currentTimeMillis();   //获取开始时间
 
-        new Thread() {
-            @Override
-            public void run() {
-                this.setName("t1");
-                try {
-                    SocketTcpServer.serverStart();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-
-        new Thread() {
-            @Override
-            public void run() {
-                this.setName("t2");
-                try {
-                    SocketTcpClient.clientStart();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-
+        SocketTcpClient.clientStart();
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }
