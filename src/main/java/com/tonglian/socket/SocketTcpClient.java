@@ -28,7 +28,7 @@ public class SocketTcpClient {
                new InputStreamReader(socket.getInputStream()));
 
        // 向服务器发送的内容
-       String sendStr = "客户端：request";
+       String sendStr = "request";
        socketOut.write(sendStr);
        socketOut.flush();
        // 等待服务器端响应

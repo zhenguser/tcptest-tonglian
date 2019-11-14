@@ -16,12 +16,11 @@ public class SocketTcpServer {
     public static void serverStart() throws IOException {
         // 创建Server Socket
         ServerSocket serverSocket = new ServerSocket();
-        // 创建我们的 Socket 监听连接地址和端口号
+        // 创建Socket 监听连接地址和端口号
         SocketAddress address = new InetSocketAddress(InetAddress.getLocalHost(), 8083);
-        // 绑定我们的监听地址
+        // 绑定监听地址
         serverSocket.bind(address);
 
-        // 等待接受请求 当前程序就会实现阻塞
         System.out.println("服务器已启动..");
         Socket accept = serverSocket.accept();
         // 获取OutputStream流
